@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Arapey&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: "Arapey";
+}
+
+body {
+    margin: 0;
+    background: #4da6ff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #4da6ff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3381cf;
+    border-radius: 45px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0669cc;
+}
+
+h1 {
+    color: white;
+    font-size: 70px;
+    margin: 15px;
+}
+
+nav {
+    background: #004d99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 3px solid #004080;
+}
+
+ul li {
+    list-style-type: none;
+    opacity: 0;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.timeline {
+    width: 40vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    background: #0073e6;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+li:nth-child(even) .content:after {
+    content: "";
+    display: block;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #0073e6 transparent transparent;
+    transform: translateX(-30px) translateY(110px);
+    position: absolute;
+}
+
+li:nth-child(odd) .content:after {
+    content: "";
+    display: block;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #0073e6;
+    transform: translateX(412px) translateY(110px);
+    position: absolute;
+}
+
+p {
+    font-weight: 500;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+}
+
+time {
+    font-size: 25px;
+    font-weight: 900;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+li:nth-child(odd) {
+    transform: translateX(-280px);
+}
+
+li:nth-child(even) {
+    transform: translateX(243px);
+}
+
+
+/*
+li:nth-child(odd) .timeline {
+    border-right: 16px solid #fff;
+}
+
+li:nth-child(even) .timeline {
+    border-left: 16px solid #fff;
+}
+*/
+
+
+li:nth-child(odd) .timeline:after {
+    content: "";
+    display: block;
+    background: #fff;
+    border: 5px solid orangered;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    transform: translateX(45px) translateY(65px);
+}
+
+li:nth-child(even) .timeline:before {
+    content: "";
+    display: block;
+    background: #fff;
+    border: 5px solid orangered;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    transform: translateX(-45.5px) translateY(65px);
+}
+
+li.isVisible {
+    opacity: 1;
+    transition: 1s;
+}
+
+li.isVisible:nth-child(even) .content{
+    transform: translateX(50px);
+    transition: 1s;
+}
+
+li.isVisible:nth-child(odd) .content{
+    transform: translateX(-50px);
+    transition: 1s;
+}
+
+.line {
+    background: #fff;
+    width: 15px;
+    height: 2300px;
+    position: absolute;
+}
